@@ -1,97 +1,55 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
-    <title>awa</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: transparent;
-            background-image: url none;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>docsify-demo</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
 </head>
 
 <body>
-    <h1>啥也不是</h1>
-    <p>这个是什么。</p>
-    <ul>
-        <li> <a href="https://github.com/EnjoyGamer3698">这个可以点好像。</a> </li>
-        <li> <a href="https://space.bilibili.com/451578699">那个B</a> </li>
-    </ul>
-    <h1>EG Engine 下载(当然不可能的)</h1>
-    <ul>
-        <li> <a href="https://github.com/EnjoyGamer3698/FNF-EG_Engine">Github源码</a> </li>
-    </ul>
-    <h1>新视频速览</h1>
-    <iframe src="https://player.bilibili.com/player.html?aid=1252035350&bvid=BV1dJ4m1j75x&cid=1482079358&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-
-    <video autoplay muted loop>
-        <source src="bg.mp4" type="video/mp4">
-        您的浏览器不支持 video 标签。
-    </video>
+  <div id="app"></div>
+  <!-- docsify-edit-on-github -->
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <script>
+    window.$docsify = {
+      name: 'docsify-demo',
+      repo: 'https://github.com/Snailclimb/JavaGuide-Interview',
+      maxLevel: 5,//最大支持渲染的标题层级
+      subMaxLevel: 3,
+      homepage: 'README.md',
+      coverpage: true,
+      loadSidebar: true,
+      auto2top: true,//切换页面后是否自动跳转到页面顶部
+      //全文搜索
+      search: {
+        //maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        placeholder: '搜索',
+        noData: '找不到结果',
+        // 搜索标题的最大程级, 1 - 6
+        depth: 3,
+      },
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/Snailclimb/JavaGuide-Interview/blob/master/')
+      ],
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!--Java代码高亮-->
+  <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+  <!--全文搜索,直接用官方提供的无法生效-->
+  <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+  <!-- 复制到剪贴板 -->
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <!-- 图片缩放 -->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
 </body>
 
 </html>
-<!---https://blog.51cto.com/u_15477976/4956842-->
-
-<head>
-    <meta charset="UTF-8">
-
-    <title>2048</title>
-    <link rel="stylesheet" type="text/css" href="2048.css"/>
-
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript" src="support2048.js"></script>
-    <script type="text/javascript" src="showAnimation.js"></script>
-    <script type="text/javascript" src="main2048.js"></script>
-
-</head>
-<body>
-
-<!-- 绘制标题 -->
-<header>
-    <h1>2048</h1>
-    <a href="javascript:newgame();" id="newgamebutton">New Game</a>
-    <p>score:<span id="score">0</span></p>
-</header>
-
-<!-- 绘制棋盘格 -->
-<div id="grid-container">
-    <div class="grid-cell" id="grid-cell-0-0"></div>
-    <div class="grid-cell" id="grid-cell-0-1"></div>
-    <div class="grid-cell" id="grid-cell-0-2"></div>
-    <div class="grid-cell" id="grid-cell-0-3"></div>
-
-    <div class="grid-cell" id="grid-cell-1-0"></div>
-    <div class="grid-cell" id="grid-cell-1-1"></div>
-    <div class="grid-cell" id="grid-cell-1-2"></div>
-    <div class="grid-cell" id="grid-cell-1-3"></div>
-
-    <div class="grid-cell" id="grid-cell-2-0"></div>
-    <div class="grid-cell" id="grid-cell-2-1"></div>
-    <div class="grid-cell" id="grid-cell-2-2"></div>
-    <div class="grid-cell" id="grid-cell-2-3"></div>
-
-    <div class="grid-cell" id="grid-cell-3-0"></div>
-    <div class="grid-cell" id="grid-cell-3-1"></div>
-    <div class="grid-cell" id="grid-cell-3-2"></div>
-    <div class="grid-cell" id="grid-cell-3-3"></div>
-</div>
-</body>
